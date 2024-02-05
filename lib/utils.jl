@@ -1,6 +1,6 @@
 module Utils
-using Statistics, DataFrames, PlotlyBase, Interpolations
-export rescale_t, rescale_y, calc_mse, rescale_data
+using Statistics, DataFrames, PlotlyBase, Interpolations, Dates
+export rescale_t, rescale_y, calc_mse, rescale_data, parse_year
 
 rescale_t(x) = t_scale .* x .+ t_mean
 rescale_t(x,m,v) = v .* x .+ m
@@ -9,13 +9,21 @@ rescale_y(x,m,v) = v .* x .+ m
 
 function rescale_data(df_orig, features, scaling)
     df = copy(df_orig)
-    df[!,:t] = rescale_t(df.t, scaling.t_mean, scaling.t_var)
+    df[!,:t] = parse_year.(rescale_t(df.t, scaling.t_mean, scaling.t_var))
     df[!, features] = rescale_y(Matrix(df[!, features])', scaling.y_mean, scaling.y_var)'
     df
 end
 
 calc_mse(t_predict, y, interpolator,scaling) = round(mean((( (y .- scaling.y_mean[1])/scaling.y_var[1] - interpolator.(t_predict)).^2)), digits=3)
 
+function parse_year(year)
+    year_str = string(year)
+    year, fraction = split(year_str, ".")
+    year = parse(Int, year)
+    days_in_year = isleapyear(year) ? 366 : 365
+    day_of_year = round(Int, parse(Float64, "0.$fraction") * days_in_year)
+    return Date(year) + Day(day_of_year - 1)  # Use Day for adding days to a date
+end
 
 function plot_pred(t, y, t̂, ŷ; kwargs...)
     traces = []
@@ -70,4 +78,7 @@ function get_traces(train_df, test_df, predict_df, norm)
 
     return all_traces
 end
+
+
+
 end
