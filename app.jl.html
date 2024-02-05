@@ -3,15 +3,15 @@
 </header>
 <div class="row">
     <div class="st-col col-12 col-sm st-module">
-        <st-big-number id="ihsmh" title="MSE" :number="e"></st-big-number>
+        <h6>Time horizon (%)</h6>
+        <q-slider id="imc5l" v-model="r" color="primary" :label="true" :max="100" :min="0" :step="10" :label-always="true" :marker-labels="true" :markers="true"></q-slider>
     </div>
-    <div class="st-col col-12 col-sm st-module">
-        <h6>Time horizon</h6>
-        <q-slider id="imc5l" v-model="r" color="primary" :label="true" :max="100" :min="1" :step="1" :label-always="true"></q-slider>
+    <div class="st-col st-module" id="ice5a">
+        <st-big-number id="i35nt" title="MSE" :number="e"></st-big-number>
     </div>
 </div>
 <div class="row">
     <div class="st-col col-12 col-sm st-module">
-        <plotly id="intqy" data="W3siZ2J0eXBlIjoiU2NhdHRlciJ9LHsiZ2J0eXBlIjoiU2NhdHRlciIsIngiOiIkX3t0cmFpbl9kYXRhLnR9IiwieSI6IiRfe3RyYWluX2RhdGEubWVhbnRlbXB9IiwidHlwZSI6InNjYXR0ZXIiLCJtb2RlIjoibWFya2VycyIsIm5hbWUiOiJUcmFjZSJ9LHsiZ2J0eXBlIjoiU2NhdHRlciIsIngiOiIkX3t0ZXN0X2RhdGEudH0iLCJ5IjoiJF97dGVzdF9kYXRhLm1lYW50ZW1wfSIsInR5cGUiOiJzY2F0dGVyIiwibW9kZSI6Im1hcmtlcnMiLCJuYW1lIjoiVHJhY2UifSx7ImdidHlwZSI6IkxpbmUgQ2hhcnQiLCJ4IjoiJF97cHJlZGljdF9kYXRhLnR9IiwieSI6IiRfe3ByZWRpY3RfZGF0YS5tZWFudGVtcH0iLCJ0eXBlIjoic2NhdHRlciIsIm1vZGUiOiJsaW5lcyIsIm5hbWUiOiJUcmFjZSJ9XQ==" config="e30=" layout="eyJ0aXRsZSI6IkZvcmVjYXN0In0="></plotly>
+        <plotly id="intqy" data="W3siZ2J0eXBlIjoiU2NhdHRlciJ9LHsiZ2J0eXBlIjoiU2NhdHRlciIsIngiOiIkX3t0cmFpbl9kYXRhLnR9IiwieSI6IiRfe3RyYWluX2RhdGEubWVhbnRlbXB9IiwidHlwZSI6InNjYXR0ZXIiLCJtb2RlIjoibWFya2VycyIsIm5hbWUiOiJUcmFpbiIsIm1hcmtlciI6eyJjb2xvciI6IiMyNTc4QjQiLCJzaXplIjoiOCJ9fSx7ImdidHlwZSI6IlNjYXR0ZXIiLCJ4IjoiJF97dGVzdF9kYXRhLnR9IiwieSI6IiRfe3Rlc3RfZGF0YS5tZWFudGVtcH0iLCJ0eXBlIjoic2NhdHRlciIsIm1vZGUiOiJtYXJrZXJzIiwibmFtZSI6Ik9ic2VydmF0aW9ucyIsIm1hcmtlciI6eyJjb2xvciI6IiNjZWFlM2IiLCJzaXplIjoiOCJ9fSx7ImdidHlwZSI6IkxpbmUgQ2hhcnQiLCJ4IjoiJF97cHJlZGljdF9kYXRhLnR9IiwieSI6IiRfe3ByZWRpY3RfZGF0YS5tZWFudGVtcH0iLCJ0eXBlIjoic2NhdHRlciIsIm1vZGUiOiJsaW5lcyIsIm5hbWUiOiJGb3JlY2FzdCIsIm1hcmtlciI6eyJjb2xvciI6IiMwMDAwMDAifX1d" config="e30=" layout="eyJ0aXRsZSI6IiJ9"></plotly>
     </div>
 </div>
