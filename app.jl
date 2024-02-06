@@ -22,21 +22,16 @@ t_grid = range(minimum(data.t), maximum(data.t), length=N_steps) |> collect
      @out e = 0.0
      @out train_data = rescale_data(train_df, features, scaling)
      @out test_data = rescale_data(test_df, features, scaling)
-     @out predict_data = test_df
+     @out predict_data = rescale_data(test_df, features, scaling)
+
      # Reactive handlers
      @onchange isready,r begin
-          predict_data = DataFrame( 
-              t = parse_year.(rescale_t(t_grid[1:r], scaling.t_mean, scaling.t_var)),
-              meantemp = predict(Vector(train_df[1, features]), t_grid[1:r], θ, 
-                                  init_state, scaling.y_mean, scaling.y_var)[1, :])
-          e = calc_mse(t_grid[1:r], predict_data.meantemp, interpolator, scaling)
+        predict_data = DataFrame(
+            t=parse_year.(rescale_t(t_grid[1:r], scaling.t_mean, scaling.t_var)),
+            meantemp=predict(Vector(train_df[1, features]), t_grid[1:r], θ,
+                init_state, scaling.y_mean, scaling.y_var)[1, :])
+        e = calc_mse(t_grid[1:r], predict_data.meantemp, interpolator, scaling)
      end
-    @onchange isready begin
-        for i in 30:5:100
-            r = i
-            sleep(0.25)
-        end
-    end
 end
  # Route declaration
  @page("/","app.jl.html")

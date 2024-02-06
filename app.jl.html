@@ -1,17 +1,17 @@
-<header class="st-header q-pa-sm">
-    <h1 class="st-header__title text-h3">Weather data forecast</h1>
+<header class="st-module">
+    <h1>Weather data forecast</h1>
 </header>
 <div class="row">
     <div class="st-col col-12 col-sm st-module">
         <h6>Time horizon (%)</h6>
-        <q-slider id="imc5l" v-model="r" color="primary" :label="true" :max="100" :min="0" :step="10" :label-always="true" :marker-labels="true" :markers="true"></q-slider>
+        <q-slider id="izzqw" v-model="r" color="primary" :label="true" :max="100" :min="30" :step="1"></q-slider>
     </div>
-    <div class="st-col st-module" id="ice5a">
-        <st-big-number id="i35nt" title="MSE" :number="e"></st-big-number>
+    <div class="st-col col-12 col-sm st-module">
+        <st-big-number id="igkfh" title="MSE" :number="e"></st-big-number>
     </div>
 </div>
 <div class="row">
     <div class="st-col col-12 col-sm st-module">
-        <plotly id="intqy" data="W3siZ2J0eXBlIjoiU2NhdHRlciJ9LHsiZ2J0eXBlIjoiU2NhdHRlciIsIngiOiIkX3t0cmFpbl9kYXRhLnR9IiwieSI6IiRfe3RyYWluX2RhdGEubWVhbnRlbXB9IiwidHlwZSI6InNjYXR0ZXIiLCJtb2RlIjoibWFya2VycyIsIm5hbWUiOiJUcmFpbiIsIm1hcmtlciI6eyJjb2xvciI6IiMyNTc4QjQiLCJzaXplIjoiOCJ9fSx7ImdidHlwZSI6IlNjYXR0ZXIiLCJ4IjoiJF97dGVzdF9kYXRhLnR9IiwieSI6IiRfe3Rlc3RfZGF0YS5tZWFudGVtcH0iLCJ0eXBlIjoic2NhdHRlciIsIm1vZGUiOiJtYXJrZXJzIiwibmFtZSI6Ik9ic2VydmF0aW9ucyIsIm1hcmtlciI6eyJjb2xvciI6IiNjZWFlM2IiLCJzaXplIjoiOCJ9fSx7ImdidHlwZSI6IkxpbmUgQ2hhcnQiLCJ4IjoiJF97cHJlZGljdF9kYXRhLnR9IiwieSI6IiRfe3ByZWRpY3RfZGF0YS5tZWFudGVtcH0iLCJ0eXBlIjoic2NhdHRlciIsIm1vZGUiOiJsaW5lcyIsIm5hbWUiOiJGb3JlY2FzdCIsIm1hcmtlciI6eyJjb2xvciI6IiMwMDAwMDAifX1d" config="e30=" layout="eyJ0aXRsZSI6IiJ9"></plotly>
+        <plotly id="ig6gh" data="W3siZ2J0eXBlIjoiU2NhdHRlciIsIngiOiIkX3t0cmFpbl9kYXRhLnR9IiwieSI6IiRfe3RyYWluX2RhdGEubWVhbnRlbXB9IiwidHlwZSI6InNjYXR0ZXIiLCJtb2RlIjoibWFya2VycyIsIm5hbWUiOiJUcmFpbiIsIm1hcmtlciI6eyJjb2xvciI6IiMyNTc4QjQifX0seyJnYnR5cGUiOiJTY2F0dGVyIiwieCI6IiRfe3Rlc3RfZGF0YS50fSIsInkiOiIkX3t0ZXN0X2RhdGEubWVhbnRlbXB9IiwidHlwZSI6InNjYXR0ZXIiLCJtb2RlIjoibWFya2VycyIsIm5hbWUiOiJPYnNlcnZhdGlvbnMiLCJtYXJrZXIiOnsiY29sb3IiOiIjYWQ4MTI1In19LHsiZ2J0eXBlIjoiTGluZSBDaGFydCIsIngiOiIkX3twcmVkaWN0X2RhdGEudH0iLCJ5IjoiJF97cHJlZGljdF9kYXRhLm1lYW50ZW1wfSIsInR5cGUiOiJzY2F0dGVyIiwibW9kZSI6ImxpbmVzIiwibmFtZSI6IkZvcmVjYXN0IiwibWFya2VyIjp7ImNvbG9yIjoiIzBjMGQwZCJ9fV0=" config="e30=" layout="eyJ0aXRsZSI6IiJ9"></plotly>
     </div>
 </div>
